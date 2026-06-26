@@ -1,0 +1,340 @@
+[
+  {
+    "code": "SCN-LIMITS-HIGH-ENERGY-ARRIVAL",
+    "title": "High-Energy Arrival",
+    "status": "ACTIVE",
+    "missionCode": "M02",
+    "context": {
+      "phase": "Arrival",
+      "aircraftState": {
+        "airspeedKias": 145,
+        "flapsDegrees": 0,
+        "landingGear": "up"
+      },
+      "operationalPressure": "Configure the aircraft while preserving published airspeed limitations."
+    },
+    "decisionModel": {
+      "primaryDecision": "Which configuration change is permissible at 145 KIAS?",
+      "expectedKnowledgeItemCodes": [
+        "LIM-AIRSPEED-VFE",
+        "LIM-AIRSPEED-VLO",
+        "LIM-AIRSPEED-VLE"
+      ]
+    },
+    "outcomeModel": {
+      "safeOutcome": "Reduce or manage speed before selecting configuration that would exceed its KIAS limitation.",
+      "unsafeOutcome": "Selecting gear or flap settings above their published KIAS limit."
+    },
+    "competencyCodes": ["C-CONFIGURATION-MANAGEMENT", "C-DECISION-MAKING"],
+    "knowledgeItemCodes": [
+      "LIM-AIRSPEED-VFE",
+      "LIM-AIRSPEED-VLO",
+      "LIM-AIRSPEED-VLE"
+    ],
+    "minimumCompetency": "APPLY",
+    "commanderScore": 75
+  },
+  {
+    "code": "SCN-FUEL-UNIT-DISCIPLINE",
+    "title": "Fuel Unit Discipline",
+    "status": "ACTIVE",
+    "missionCode": "M04",
+    "context": {
+      "phase": "Preflight",
+      "aircraftState": {
+        "usableFuelLitres": 333,
+        "usableFuelGallons": 88
+      },
+      "operationalPressure": "Use litres operationally while retaining gallons for weight and balance."
+    },
+    "decisionModel": {
+      "primaryDecision": "Which unit should be used for operational fuel planning in this app?",
+      "expectedKnowledgeItemCodes": ["CFG-FUEL-AIRCRAFT-USABLE"]
+    },
+    "outcomeModel": {
+      "safeOutcome": "Use 333 litres for operational fuel planning and 88 US gallons for weight and balance.",
+      "unsafeOutcome": "Mixing litres and gallons without preserving the purpose of each unit."
+    },
+    "competencyCodes": ["C-FUEL-MANAGEMENT", "C-DECISION-MAKING"],
+    "knowledgeItemCodes": ["CFG-FUEL-AIRCRAFT-USABLE"],
+    "minimumCompetency": "APPLY",
+    "commanderScore": 75
+  },
+  {
+    "code": "SCN-GEAR-SPEED-DISCIPLINE",
+    "title": "Gear Speed Discipline",
+    "status": "ACTIVE",
+    "missionCode": "M05",
+    "context": {
+      "phase": "Approach",
+      "aircraftState": {
+        "airspeedKias": 145,
+        "landingGear": "up"
+      },
+      "operationalPressure": "Landing gear is required, but the aircraft is above VLO."
+    },
+    "decisionModel": {
+      "primaryDecision": "Can the landing gear be selected down at 145 KIAS?",
+      "expectedKnowledgeItemCodes": ["LIM-AIRSPEED-VLO"]
+    },
+    "outcomeModel": {
+      "safeOutcome": "Do not select gear until airspeed is at or below 140 KIAS.",
+      "unsafeOutcome": "Selecting landing gear above VLO."
+    },
+    "competencyCodes": [
+      "C-CONFIGURATION-MANAGEMENT",
+      "C-AIRCRAFT-COMMAND"
+    ],
+    "knowledgeItemCodes": ["LIM-AIRSPEED-VLO"],
+    "minimumCompetency": "COMMAND",
+    "commanderScore": 80
+  },
+  {
+    "code": "SCN-GEAR-MANUAL-EXTENSION",
+    "title": "Manual Gear Extension",
+    "status": "DRAFT",
+    "missionCode": "M05",
+    "context": {
+      "phase": "Approach",
+      "aircraftState": {
+        "landingGear": "not confirmed down"
+      },
+      "operationalPressure": "Manual gear extension is required."
+    },
+    "decisionModel": {
+      "primaryDecision": "What must be confirmed before using the gear hand pump?",
+      "expectedKnowledgeItemCodes": ["PROC-GEAR-MANUAL-EXTENSION-PLACARD"]
+    },
+    "outcomeModel": {
+      "safeOutcome": "Select gear down, pull handle forward, then pump vertically.",
+      "unsafeOutcome": "Pumping with gear up selected."
+    },
+    "competencyCodes": [
+      "C-EMERGENCY-MANAGEMENT",
+      "C-AIRCRAFT-COMMAND"
+    ],
+    "knowledgeItemCodes": ["PROC-GEAR-MANUAL-EXTENSION-PLACARD"],
+    "minimumCompetency": "COMMAND",
+    "commanderScore": 80
+  },
+  {
+    "code": "SCN-GEAR-FAILED-RETRACTION",
+    "title": "Failed Gear Retraction",
+    "status": "DRAFT",
+    "missionCode": "M05",
+    "context": {
+      "phase": "Climb",
+      "aircraftState": {
+        "landingGear": "selected up",
+        "gearUpLight": "not illuminated",
+        "gearMotor": "audible"
+      },
+      "operationalPressure": "The aircraft has departed and the landing gear is not confirmed retracted."
+    },
+    "decisionModel": {
+      "primaryDecision": "How should a failed gear retraction or intermittent gear up indication be handled?",
+      "expectedKnowledgeItemCodes": [
+        "PROC-GEAR-MALFUNCTION-GENERAL-CHECKS",
+        "PROC-GEAR-FAILS-TO-RETRACT",
+        "PROC-GEAR-MOTOR-ONE-MINUTE"
+      ]
+    },
+    "outcomeModel": {
+      "safeOutcome": "Use the POH malfunction checks, recycle as directed, monitor gear motor operation, and protect the motor if it continues after one minute.",
+      "unsafeOutcome": "Ignoring the indication or allowing continued gear motor operation without following the POH action."
+    },
+    "competencyCodes": [
+      "C-CONFIGURATION-MANAGEMENT",
+      "C-EMERGENCY-MANAGEMENT",
+      "C-AIRCRAFT-COMMAND"
+    ],
+    "knowledgeItemCodes": [
+      "PROC-GEAR-MALFUNCTION-GENERAL-CHECKS",
+      "PROC-GEAR-FAILS-TO-RETRACT",
+      "PROC-GEAR-MOTOR-ONE-MINUTE"
+    ],
+    "minimumCompetency": "COMMAND",
+    "commanderScore": 80
+  },
+  {
+    "code": "SCN-GEAR-FAILED-EXTENSION",
+    "title": "Failed Gear Extension",
+    "status": "DRAFT",
+    "missionCode": "M05",
+    "context": {
+      "phase": "Approach",
+      "aircraftState": {
+        "airspeedKias": 110,
+        "landingGear": "selected down",
+        "gearDownLight": "not illuminated"
+      },
+      "operationalPressure": "The aircraft is approaching the destination and normal gear extension has not produced a confirmed down indication."
+    },
+    "decisionModel": {
+      "primaryDecision": "What is the escalation path after normal gear extension fails?",
+      "expectedKnowledgeItemCodes": [
+        "PROC-GEAR-MALFUNCTION-GENERAL-CHECKS",
+        "PROC-GEAR-EXTENSION-RETRY-100-KIAS",
+        "PROC-GEAR-FAILS-TO-EXTEND"
+      ]
+    },
+    "outcomeModel": {
+      "safeOutcome": "Complete the general checks, slow to 100 KIAS for a normal-extension retry, then use manual extension if normal extension still fails.",
+      "unsafeOutcome": "Skipping the POH checks, using the hand pump with gear up selected, or continuing without a confirmed landing configuration."
+    },
+    "competencyCodes": [
+      "C-EMERGENCY-MANAGEMENT",
+      "C-DECISION-MAKING",
+      "C-AIRCRAFT-COMMAND"
+    ],
+    "knowledgeItemCodes": [
+      "PROC-GEAR-MALFUNCTION-GENERAL-CHECKS",
+      "PROC-GEAR-EXTENSION-RETRY-100-KIAS",
+      "PROC-GEAR-FAILS-TO-EXTEND",
+      "PROC-GEAR-MANUAL-EXTENSION-PLACARD"
+    ],
+    "minimumCompetency": "COMMAND",
+    "commanderScore": 80
+  },
+  {
+    "code": "SCN-GEAR-NO-POSITIVE-LOCK",
+    "title": "No Positive Gear Lock Indication",
+    "status": "DRAFT",
+    "missionCode": "M05",
+    "context": {
+      "phase": "Landing",
+      "aircraftState": {
+        "landingGear": "down not positively locked",
+        "approachConfiguration": "landing will continue"
+      },
+      "operationalPressure": "A landing is required, but gear lock indication is not positive."
+    },
+    "decisionModel": {
+      "primaryDecision": "How should the landing be flown without positive gear lock indication?",
+      "expectedKnowledgeItemCodes": [
+        "PROC-GEAR-NO-POSITIVE-LOCK"
+      ]
+    },
+    "outcomeModel": {
+      "safeOutcome": "Use the POH landing technique, minimize braking and taxi loads, then shut down before inspecting the gear.",
+      "unsafeOutcome": "Landing or taxiing as though the gear were positively locked."
+    },
+    "competencyCodes": [
+      "C-EMERGENCY-MANAGEMENT",
+      "C-DECISION-MAKING",
+      "C-AIRCRAFT-COMMAND"
+    ],
+    "knowledgeItemCodes": ["PROC-GEAR-NO-POSITIVE-LOCK"],
+    "minimumCompetency": "COMMAND",
+    "commanderScore": 80
+  },
+  {
+    "code": "SCN-GEAR-UP-LANDING-DECISION",
+    "title": "Gear-Up Landing Decision",
+    "status": "DRAFT",
+    "missionCode": "M05",
+    "context": {
+      "phase": "Forced landing planning",
+      "aircraftState": {
+        "landingGear": "retracted or partially extended",
+        "manualExtension": "unsuccessful"
+      },
+      "operationalPressure": "All efforts to extend the gear have failed and a wheels-up landing must be planned."
+    },
+    "decisionModel": {
+      "primaryDecision": "When should the pilot transition from extension troubleshooting to the POH gear-up landing plan?",
+      "expectedKnowledgeItemCodes": [
+        "PROC-GEAR-UP-LANDING",
+        "PROC-GEAR-FAILS-TO-EXTEND"
+      ]
+    },
+    "outcomeModel": {
+      "safeOutcome": "After normal and manual extension fail, configure deliberately for the POH gear-up landing plan and evacuation sequence.",
+      "unsafeOutcome": "Continuing troubleshooting below a safe planning margin or landing without committing to the published gear-up configuration."
+    },
+    "competencyCodes": [
+      "C-EMERGENCY-MANAGEMENT",
+      "C-DECISION-MAKING",
+      "C-AIRCRAFT-COMMAND"
+    ],
+    "knowledgeItemCodes": [
+      "PROC-GEAR-UP-LANDING",
+      "PROC-GEAR-FAILS-TO-EXTEND"
+    ],
+    "minimumCompetency": "COMMAND",
+    "commanderScore": 85
+  },
+  {
+    "code": "SCN-ELECTRICAL-OVERVOLTAGE-RECURRENCE",
+    "title": "Over-Voltage Recurrence",
+    "status": "DRAFT",
+    "missionCode": "M06",
+    "context": {
+      "phase": "Cruise",
+      "aircraftState": {
+        "overVoltageLight": "illuminated again after reset attempt",
+        "alternator": "suspected malfunction",
+        "batteryOperation": "limited duration"
+      },
+      "operationalPressure": "The over-voltage warning has returned after the POH reset sequence."
+    },
+    "decisionModel": {
+      "primaryDecision": "What should happen after the over-voltage light illuminates again?",
+      "expectedKnowledgeItemCodes": [
+        "PROC-ELECTRICAL-OVER-VOLTAGE",
+        "PROC-ELECTRICAL-BATTERY-CONSERVATION"
+      ]
+    },
+    "outcomeModel": {
+      "safeOutcome": "Treat the recurrence as a confirmed malfunction, terminate the flight, and minimize electrical drain for landing needs.",
+      "unsafeOutcome": "Continuing the flight as normal or using battery power without preserving capacity for landing configuration."
+    },
+    "competencyCodes": [
+      "C-ELECTRICAL-MANAGEMENT",
+      "C-EMERGENCY-MANAGEMENT",
+      "C-DECISION-MAKING"
+    ],
+    "knowledgeItemCodes": [
+      "PROC-ELECTRICAL-OVER-VOLTAGE",
+      "PROC-ELECTRICAL-BATTERY-CONSERVATION"
+    ],
+    "minimumCompetency": "APPLY",
+    "commanderScore": 75
+  },
+  {
+    "code": "SCN-ELECTRICAL-DISCHARGE-IN-FLIGHT",
+    "title": "Continuous Ammeter Discharge",
+    "status": "DRAFT",
+    "missionCode": "M06",
+    "context": {
+      "phase": "Enroute",
+      "aircraftState": {
+        "ammeter": "continuous discharge",
+        "alternatorOutput": "not supplying system"
+      },
+      "operationalPressure": "The aircraft is in flight with a continuous discharge indication."
+    },
+    "decisionModel": {
+      "primaryDecision": "How should continuous discharge be handled?",
+      "expectedKnowledgeItemCodes": [
+        "PROC-ELECTRICAL-AMMETER-DISCHARGE",
+        "PROC-ELECTRICAL-BATTERY-CONSERVATION"
+      ]
+    },
+    "outcomeModel": {
+      "safeOutcome": "Turn alternator off, shed nonessential load, terminate the flight as soon as practical, and preserve battery for landing needs.",
+      "unsafeOutcome": "Leaving unnecessary electrical loads on or delaying landing while battery capacity is being consumed."
+    },
+    "competencyCodes": [
+      "C-ELECTRICAL-MANAGEMENT",
+      "C-EMERGENCY-MANAGEMENT",
+      "C-DECISION-MAKING"
+    ],
+    "knowledgeItemCodes": [
+      "PROC-ELECTRICAL-AMMETER-DISCHARGE",
+      "PROC-ELECTRICAL-BATTERY-CONSERVATION"
+    ],
+    "minimumCompetency": "APPLY",
+    "commanderScore": 75
+  }
+]

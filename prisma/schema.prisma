@@ -1,0 +1,275 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum VerificationStatus {
+  DRAFT
+  EXTRACTED
+  VERIFIED
+  COMMANDER_ENHANCED
+}
+
+enum MissionStatus {
+  LOCKED
+  AVAILABLE
+  ACTIVE
+  COMPLETED
+  MASTERED
+}
+
+enum KnowledgeCategory {
+  LIMITATION
+  PROCEDURE
+  SYSTEM
+  PERFORMANCE
+  EMERGENCY
+}
+
+enum Criticality {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum OperationalFrequency {
+  RARE
+  OCCASIONAL
+  EVERY_FLIGHT
+  AS_REQUIRED
+}
+
+enum CompetencyLevel {
+  UNSEEN
+  RECOGNISE
+  EXPLAIN
+  APPLY
+  COMMAND
+}
+
+enum ScenarioStatus {
+  DRAFT
+  VERIFIED
+  ACTIVE
+  ARCHIVED
+}
+
+model Aircraft {
+  id             String   @id @default(cuid())
+  code           String   @unique
+  manufacturer   String
+  model          String
+  variant        String?
+  year           Int?
+  configuration  Json?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  missions       Mission[]
+  knowledgeItems KnowledgeItem[]
+  scenarios      Scenario[]
+}
+
+model Mission {
+  id                 String        @id @default(cuid())
+  aircraftId         String
+  code               String
+  title              String
+  description        String?
+  purpose            String?
+  status             MissionStatus @default(LOCKED)
+  sequence           Int
+  graduationCriteria Json?
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+
+  aircraft       Aircraft              @relation(fields: [aircraftId], references: [id], onDelete: Cascade)
+  lessons        Lesson[]
+  scenarios      Scenario[]
+  competencies   MissionCompetency[]
+  knowledgeItems MissionKnowledgeItem[]
+
+  @@unique([aircraftId, code])
+  @@index([aircraftId, sequence])
+}
+
+model Lesson {
+  id               String   @id @default(cuid())
+  missionId        String
+  code             String
+  title            String
+  summary          String?
+  sequence         Int
+  targetMinutesMin Int?
+  targetMinutesMax Int?
+  objectives       Json?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  mission        Mission               @relation(fields: [missionId], references: [id], onDelete: Cascade)
+  knowledgeItems LessonKnowledgeItem[]
+
+  @@unique([missionId, code])
+  @@index([missionId, sequence])
+}
+
+model KnowledgeItem {
+  id                   String               @id @default(cuid())
+  aircraftId           String
+  code                 String
+  title                String
+  category             KnowledgeCategory
+  knowledge            String
+  understanding        String?
+  application          String?
+  command              String?
+  memoryRequired       Boolean              @default(false)
+  referenceRequired    Boolean              @default(true)
+  criticality          Criticality           @default(MEDIUM)
+  operationalFrequency OperationalFrequency?
+  verificationStatus   VerificationStatus    @default(DRAFT)
+  createdAt            DateTime              @default(now())
+  updatedAt            DateTime              @updatedAt
+
+  aircraft       Aircraft               @relation(fields: [aircraftId], references: [id], onDelete: Cascade)
+  sourceRefs     SourceReference[]
+  lessons        LessonKnowledgeItem[]
+  missions       MissionKnowledgeItem[]
+  scenarios      ScenarioKnowledgeItem[]
+  competencies   CompetencyKnowledgeItem[]
+
+  @@unique([aircraftId, code])
+  @@index([aircraftId, category])
+  @@index([verificationStatus])
+}
+
+model SourceReference {
+  id              String             @id @default(cuid())
+  knowledgeItemId String
+  sourceType      String
+  sourceTitle     String
+  sourceSection   String?
+  sourcePage      String?
+  sourceRevision  String?
+  verification    VerificationStatus @default(DRAFT)
+  notes           String?
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+
+  knowledgeItem KnowledgeItem @relation(fields: [knowledgeItemId], references: [id], onDelete: Cascade)
+
+  @@index([knowledgeItemId])
+}
+
+model Scenario {
+  id                 String         @id @default(cuid())
+  aircraftId         String
+  missionId          String?
+  code               String
+  title              String
+  status             ScenarioStatus @default(DRAFT)
+  context            Json
+  initialState       Json?
+  decisionModel      Json?
+  outcomeModel       Json?
+  minimumCompetency  CompetencyLevel?
+  commanderScore     Int?
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+
+  aircraft       Aircraft                @relation(fields: [aircraftId], references: [id], onDelete: Cascade)
+  mission        Mission?                @relation(fields: [missionId], references: [id], onDelete: SetNull)
+  knowledgeItems ScenarioKnowledgeItem[]
+  competencies   ScenarioCompetency[]
+
+  @@unique([aircraftId, code])
+  @@index([missionId])
+  @@index([status])
+}
+
+model Competency {
+  id          String   @id @default(cuid())
+  code        String   @unique
+  title       String
+  description String?
+  domain      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  missions       MissionCompetency[]
+  scenarios      ScenarioCompetency[]
+  knowledgeItems CompetencyKnowledgeItem[]
+}
+
+model MissionCompetency {
+  missionId    String
+  competencyId String
+  targetLevel  CompetencyLevel @default(APPLY)
+
+  mission    Mission    @relation(fields: [missionId], references: [id], onDelete: Cascade)
+  competency Competency @relation(fields: [competencyId], references: [id], onDelete: Cascade)
+
+  @@id([missionId, competencyId])
+}
+
+model LessonKnowledgeItem {
+  lessonId        String
+  knowledgeItemId String
+  sequence        Int?
+
+  lesson        Lesson        @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  knowledgeItem KnowledgeItem @relation(fields: [knowledgeItemId], references: [id], onDelete: Cascade)
+
+  @@id([lessonId, knowledgeItemId])
+  @@index([knowledgeItemId])
+}
+
+model MissionKnowledgeItem {
+  missionId       String
+  knowledgeItemId String
+
+  mission       Mission       @relation(fields: [missionId], references: [id], onDelete: Cascade)
+  knowledgeItem KnowledgeItem @relation(fields: [knowledgeItemId], references: [id], onDelete: Cascade)
+
+  @@id([missionId, knowledgeItemId])
+  @@index([knowledgeItemId])
+}
+
+model ScenarioKnowledgeItem {
+  scenarioId      String
+  knowledgeItemId String
+
+  scenario      Scenario      @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  knowledgeItem KnowledgeItem @relation(fields: [knowledgeItemId], references: [id], onDelete: Cascade)
+
+  @@id([scenarioId, knowledgeItemId])
+  @@index([knowledgeItemId])
+}
+
+model ScenarioCompetency {
+  scenarioId   String
+  competencyId String
+  targetLevel  CompetencyLevel @default(COMMAND)
+
+  scenario   Scenario   @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
+  competency Competency @relation(fields: [competencyId], references: [id], onDelete: Cascade)
+
+  @@id([scenarioId, competencyId])
+}
+
+model CompetencyKnowledgeItem {
+  competencyId    String
+  knowledgeItemId String
+  targetLevel     CompetencyLevel @default(APPLY)
+
+  competency    Competency    @relation(fields: [competencyId], references: [id], onDelete: Cascade)
+  knowledgeItem KnowledgeItem @relation(fields: [knowledgeItemId], references: [id], onDelete: Cascade)
+
+  @@id([competencyId, knowledgeItemId])
+  @@index([knowledgeItemId])
+}

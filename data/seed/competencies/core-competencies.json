@@ -1,0 +1,44 @@
+[
+  {
+    "code": "C-AIRCRAFT-SYSTEMS",
+    "title": "Aircraft Systems",
+    "description": "Explain the aircraft configuration and source-backed system facts.",
+    "domain": "Aircraft"
+  },
+  {
+    "code": "C-CONFIGURATION-MANAGEMENT",
+    "title": "Configuration Management",
+    "description": "Configure the aircraft within approved airspeed, flap, and landing gear limits.",
+    "domain": "Operations"
+  },
+  {
+    "code": "C-FUEL-MANAGEMENT",
+    "title": "Fuel Management",
+    "description": "Plan, monitor, and command fuel using aircraft-specific usable fuel and POH limitations.",
+    "domain": "Operations"
+  },
+  {
+    "code": "C-EMERGENCY-MANAGEMENT",
+    "title": "Emergency Management",
+    "description": "Recognise abnormal conditions and apply source-backed emergency procedures.",
+    "domain": "Emergency"
+  },
+  {
+    "code": "C-ELECTRICAL-MANAGEMENT",
+    "title": "Electrical Management",
+    "description": "Diagnose electrical power supply malfunctions and preserve power for essential aircraft configuration and landing needs.",
+    "domain": "Emergency"
+  },
+  {
+    "code": "C-DECISION-MAKING",
+    "title": "Decision Making",
+    "description": "Make operational decisions that preserve aircraft limits and safety margins.",
+    "domain": "Command"
+  },
+  {
+    "code": "C-AIRCRAFT-COMMAND",
+    "title": "Aircraft Command",
+    "description": "Integrate aircraft knowledge, procedure, and judgement under operational pressure.",
+    "domain": "Command"
+  }
+]

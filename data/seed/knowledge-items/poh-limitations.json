@@ -1,0 +1,674 @@
+[
+  {
+    "code": "LIM-AIRSPEED-VNE",
+    "title": "Never Exceed Speed",
+    "category": "LIMITATION",
+    "knowledge": "VNE is 182 KIAS.",
+    "understanding": "The POH states this speed must not be exceeded in any operation.",
+    "application": "Used as the absolute upper airspeed limit for all operations.",
+    "command": "If aircraft speed approaches VNE, reduce speed immediately and avoid further acceleration.",
+    "memoryRequired": true,
+    "referenceRequired": false,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "EVERY_FLIGHT",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Limitations, Figure 2-1",
+        "sourcePage": "2-4",
+        "pdfPages": [20],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "LIM-AIRSPEED-VNO",
+    "title": "Maximum Structural Cruising Speed",
+    "category": "LIMITATION",
+    "knowledge": "VNO is 143 KIAS.",
+    "understanding": "The POH states this speed should not be exceeded except in smooth air, and then only with caution.",
+    "application": "Used when deciding whether the aircraft is operating inside the normal speed range or the caution range.",
+    "command": "If operating above VNO, confirm smooth air and reduce speed if turbulence or uncertainty exists.",
+    "memoryRequired": true,
+    "referenceRequired": false,
+    "criticality": "HIGH",
+    "operationalFrequency": "EVERY_FLIGHT",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Limitations, Figure 2-1",
+        "sourcePage": "2-4",
+        "pdfPages": [20],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "LIM-AIRSPEED-VA",
+    "title": "Maneuvering Speed",
+    "category": "LIMITATION",
+    "knowledge": "VA is 112 KIAS at 3100 lb, 101 KIAS at 2550 lb, and 89 KIAS at 2000 lb.",
+    "understanding": "The POH states full or abrupt control movements should not be made above the applicable maneuvering speed.",
+    "application": "Used before abrupt control inputs, turbulence penetration, or maneuvering at different aircraft weights.",
+    "command": "Select the maneuvering speed appropriate to current aircraft weight before accepting abrupt control demands.",
+    "memoryRequired": true,
+    "referenceRequired": false,
+    "criticality": "HIGH",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Limitations, Figure 2-1",
+        "sourcePage": "2-4",
+        "pdfPages": [20],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "LIM-AIRSPEED-VFE",
+    "title": "Maximum Flap Extended Speeds",
+    "category": "LIMITATION",
+    "knowledge": "VFE is 140 KIAS to 10 degrees flaps and 95 KIAS from 10 degrees to 40 degrees flaps.",
+    "understanding": "The POH states these speeds must not be exceeded with the given flap settings.",
+    "application": "Used when configuring the aircraft and managing descent or approach energy.",
+    "command": "Delay flap extension or reduce speed when the aircraft is above the applicable flap speed.",
+    "memoryRequired": true,
+    "referenceRequired": false,
+    "criticality": "HIGH",
+    "operationalFrequency": "EVERY_FLIGHT",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Limitations, Figure 2-1",
+        "sourcePage": "2-4",
+        "pdfPages": [20],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "LIM-AIRSPEED-VLO",
+    "title": "Maximum Landing Gear Operating Speed",
+    "category": "LIMITATION",
+    "knowledge": "VLO is 140 KIAS.",
+    "understanding": "The POH states landing gear must not be extended or retracted above this speed.",
+    "application": "Used before selecting landing gear up or down.",
+    "command": "Do not move the gear selector until airspeed is at or below VLO.",
+    "memoryRequired": true,
+    "referenceRequired": false,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "EVERY_FLIGHT",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Limitations, Figure 2-1",
+        "sourcePage": "2-4",
+        "pdfPages": [20],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "LIM-AIRSPEED-VLE",
+    "title": "Maximum Landing Gear Extended Speed",
+    "category": "LIMITATION",
+    "knowledge": "VLE is 140 KIAS.",
+    "understanding": "The POH states this speed must not be exceeded with landing gear extended.",
+    "application": "Used after gear extension and during descent or approach planning.",
+    "command": "With gear extended, keep the aircraft at or below VLE.",
+    "memoryRequired": true,
+    "referenceRequired": false,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "EVERY_FLIGHT",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Limitations, Figure 2-1",
+        "sourcePage": "2-4",
+        "pdfPages": [20],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "LIM-POWERPLANT-ENGINE",
+    "title": "Engine Takeoff and Continuous Operating Limits",
+    "category": "LIMITATION",
+    "knowledge": "Maximum power is 235 BHP, maximum engine speed is 2400 RPM, maximum cylinder head temperature is 500 degrees F, and maximum oil temperature is 245 degrees F.",
+    "understanding": "These limits define approved powerplant operating boundaries for takeoff and continuous operation.",
+    "application": "Used when monitoring engine instruments during takeoff, climb, cruise, and abnormal indications.",
+    "command": "If an engine indication exceeds a limit, reduce demand or execute the relevant abnormal procedure.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "EVERY_FLIGHT",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Power Plant Limitations",
+        "sourcePage": "2-5",
+        "pdfPages": [21],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "LIM-WEIGHT-MAXIMUMS",
+    "title": "Maximum Takeoff and Landing Weight",
+    "category": "LIMITATION",
+    "knowledge": "Maximum takeoff weight is 3100 lb and maximum landing weight is 3100 lb.",
+    "understanding": "These are approved weight limits for takeoff and landing.",
+    "application": "Used during weight and balance calculations and before flight release.",
+    "command": "Do not commence takeoff or landing planning outside the approved weight limits.",
+    "memoryRequired": true,
+    "referenceRequired": false,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "EVERY_FLIGHT",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Weight Limits",
+        "sourcePage": "2-6",
+        "pdfPages": [22],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "LIM-FUEL-STANDARD-TANKS",
+    "title": "Standard Tank Fuel Capacity",
+    "category": "LIMITATION",
+    "knowledge": "Standard tanks contain 61 U.S. gallons total fuel, 56 U.S. gallons usable fuel, and 5.0 U.S. gallons unusable fuel.",
+    "understanding": "Usable fuel is the fuel available for flight planning; unusable fuel cannot be safely used in flight.",
+    "application": "Used when determining fuel endurance and reserves for aircraft with standard tanks.",
+    "command": "Base flight planning on usable fuel, not total fuel capacity.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "EVERY_FLIGHT",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Fuel Limitations",
+        "sourcePage": "2-8",
+        "pdfPages": [24],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "LIM-FUEL-LONG-RANGE-TANKS",
+    "title": "Long Range Tank Fuel Capacity",
+    "category": "LIMITATION",
+    "knowledge": "Long range tanks contain 80 U.S. gallons total fuel, 75 U.S. gallons usable fuel, and 5.0 U.S. gallons unusable fuel.",
+    "understanding": "Usable fuel is the fuel available for flight planning; unusable fuel cannot be safely used in flight.",
+    "application": "Used when determining fuel endurance and reserves for aircraft with long range tanks.",
+    "command": "Base flight planning on usable fuel, not total fuel capacity.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "EVERY_FLIGHT",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Fuel Limitations",
+        "sourcePage": "2-8",
+        "pdfPages": [24],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "CFG-FUEL-AIRCRAFT-USABLE",
+    "title": "Aircraft-Specific Usable Fuel",
+    "category": "SYSTEM",
+    "knowledge": "The aircraft flown has 88 U.S. gallons usable fuel, approximately 333 litres.",
+    "understanding": "This is an aircraft-specific configuration value, not the POH baseline long-range tank value.",
+    "application": "Use litres for operational fuel planning and display; retain U.S. gallons for weight and balance.",
+    "command": "Plan operational fuel in litres while preserving U.S. gallons where weight and balance calculations require them.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "EVERY_FLIGHT",
+    "verificationStatus": "VERIFIED",
+    "sourceReferences": [
+      {
+        "sourceType": "Aircraft Configuration",
+        "sourceTitle": "Operator-provided aircraft configuration",
+        "sourceSection": "Fuel capacity",
+        "sourcePage": "N/A",
+        "verification": "VERIFIED",
+        "notes": "Pilot confirmed this aircraft has 88 U.S. gallons usable fuel, normally measured in litres except for weight and balance."
+      }
+    ]
+  },
+  {
+    "code": "PROC-GEAR-MANUAL-EXTENSION-PLACARD",
+    "title": "Manual Gear Extension Placard",
+    "category": "PROCEDURE",
+    "knowledge": "The manual gear extension placard states: select gear down, pull handle forward, then pump vertically. It cautions not to pump with gear up selected.",
+    "understanding": "The placard provides the cockpit sequence for manual landing gear extension and warns against pumping with gear up selected.",
+    "application": "Used when landing gear extension requires manual gear extension using the hand pump.",
+    "command": "If manual extension is required, confirm gear down is selected before using the hand pump.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Placards",
+        "sourcePage": "2-11",
+        "pdfPages": [27],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "PROC-GEAR-MALFUNCTION-GENERAL-CHECKS",
+    "title": "Landing Gear Malfunction General Checks",
+    "category": "PROCEDURE",
+    "knowledge": "For a possible gear retraction or extension malfunction, the POH directs checking master switch ON, LDG GEAR and GEAR PUMP circuit breakers in, and both gear position indicator lights.",
+    "understanding": "Electrical power, circuit breaker state, and indicator light integrity can mimic or mask an actual landing gear malfunction.",
+    "application": "Used before treating a gear indication as a confirmed mechanical or hydraulic landing gear failure.",
+    "command": "Before escalating a landing gear abnormality, confirm power, breakers, and indicator lights are not the source of the indication.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Amplified Landing Gear Malfunction Procedures",
+        "sourcePage": "3-17",
+        "pdfPages": [45],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "PROC-GEAR-FAILS-TO-RETRACT",
+    "title": "Landing Gear Fails To Retract",
+    "category": "PROCEDURE",
+    "knowledge": "If the landing gear fails to retract, the POH checklist includes master switch ON, gear lever full up, LDG GEAR and GEAR PUMP circuit breakers in, gear up light check, gear lever recycle, and gear motor operation check.",
+    "understanding": "A failed retraction may be an indication, switch, circuit breaker, motor, or actual retraction problem; the POH sequence isolates those possibilities before continued flight.",
+    "application": "Used after takeoff or during climb when the gear does not retract or gear up indication is intermittent.",
+    "command": "Run the POH retraction malfunction checks before continuing, and monitor for gear motor operation.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "HIGH",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Landing Gear Malfunction Procedures",
+        "sourcePage": "3-8",
+        "pdfPages": [36],
+        "verification": "EXTRACTED"
+      },
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Amplified Landing Gear Malfunction Procedures",
+        "sourcePage": "3-17",
+        "pdfPages": [45],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "PROC-GEAR-FAILS-TO-EXTEND",
+    "title": "Landing Gear Fails To Extend",
+    "category": "PROCEDURE",
+    "knowledge": "If the landing gear fails to extend normally, the POH checklist calls for landing gear lever DOWN, emergency hand pump handle extended and pumped until resistance becomes heavy, gear down light ON, and pump handle stowed.",
+    "understanding": "Manual extension uses the emergency hand pump to lock the gear when normal extension is unsuccessful, provided the hydraulic system has not completely lost fluid.",
+    "application": "Used during approach or landing preparation when normal gear extension does not produce a confirmed gear down indication.",
+    "command": "Select gear down before using the hand pump, pump until heavy resistance, then verify gear down indication.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Landing Gear Malfunction Procedures",
+        "sourcePage": "3-8",
+        "pdfPages": [36],
+        "verification": "EXTRACTED"
+      },
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Amplified Landing Gear Malfunction Procedures",
+        "sourcePage": "3-18",
+        "pdfPages": [46],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "PROC-GEAR-EXTENSION-RETRY-100-KIAS",
+    "title": "Landing Gear Extension Retry Airspeed",
+    "category": "PROCEDURE",
+    "knowledge": "For abnormal gear extension, the amplified POH procedure states to repeat normal extension at a reduced airspeed of 100 KIAS after general checks.",
+    "understanding": "Reducing airspeed can reduce aerodynamic load on the landing gear system before escalating to manual extension.",
+    "application": "Used when normal gear extension does not succeed but before manual extension is attempted.",
+    "command": "After general checks, slow to 100 KIAS and repeat normal gear extension with the gear lever down and detent engaged.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "HIGH",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Amplified Landing Gear Malfunction Procedures",
+        "sourcePage": "3-18",
+        "pdfPages": [46],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "PROC-GEAR-MOTOR-ONE-MINUTE",
+    "title": "Gear Motor Operation After One Minute",
+    "category": "PROCEDURE",
+    "knowledge": "If gear motor operation is audible after one minute following gear lever actuation, the POH directs pulling the GEAR PUMP circuit breaker to prevent electric motor overheating and re-engaging it just prior to landing.",
+    "understanding": "Sustained motor operation is an abnormal condition that can overheat the electric motor while still requiring restoration of the circuit before landing.",
+    "application": "Used after gear lever actuation when the gear motor continues to run or ammeter fluctuations suggest intermittent motor operation.",
+    "command": "Protect the gear motor if it continues running after one minute, and restore the breaker before landing.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "HIGH",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Amplified Landing Gear Malfunction Procedures",
+        "sourcePage": "3-17",
+        "pdfPages": [45],
+        "verification": "EXTRACTED"
+      },
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Amplified Landing Gear Malfunction Procedures",
+        "sourcePage": "3-18",
+        "pdfPages": [46],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "PROC-GEAR-UP-LANDING",
+    "title": "Gear Up Landing",
+    "category": "PROCEDURE",
+    "knowledge": "If the gear remains retracted or only partially extended after all extension efforts fail, the POH directs planning a wheels-up landing with gear lever UP, landing gear and gear pump breakers in, 40 degrees flaps on final, and 65 KIAS.",
+    "understanding": "A deliberate gear-up landing configuration reduces ambiguity after extension has failed and prepares the aircraft and occupants for touchdown and evacuation.",
+    "application": "Used only after normal and manual landing gear extension efforts have failed.",
+    "command": "Commit to the POH gear-up landing configuration only after extension attempts, including manual extension, have failed.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Landing Gear Malfunction Procedures",
+        "sourcePage": "3-9",
+        "pdfPages": [37],
+        "verification": "EXTRACTED"
+      },
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Amplified Landing Gear Malfunction Procedures",
+        "sourcePage": "3-18",
+        "pdfPages": [46],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "PROC-GEAR-NO-POSITIVE-LOCK",
+    "title": "Landing Without Positive Gear Lock Indication",
+    "category": "PROCEDURE",
+    "knowledge": "When landing without positive gear lock indication, the POH calls for before-landing check complete, normal full-flap approach, gear and gear pump breakers in, smooth tail-low landing, minimum braking, slow taxi, and engine shutdown before inspecting gear.",
+    "understanding": "The procedure assumes the aircraft may be vulnerable to gear collapse and prioritizes a gentle touchdown, reduced braking load, and inspection only after shutdown.",
+    "application": "Used when landing gear position is not positively confirmed even though landing will proceed.",
+    "command": "Treat uncertain gear lock indication as a landing risk and minimize loads until shutdown and inspection.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Landing Gear Malfunction Procedures",
+        "sourcePage": "3-9",
+        "pdfPages": [37],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "PROC-GEAR-DEFECTIVE-NOSE-GEAR",
+    "title": "Landing With Defective Nose Gear Or Flat Nose Tire",
+    "category": "PROCEDURE",
+    "knowledge": "For defective nose gear or flat nose tire, the POH includes moving movable load aft, moving passenger weight aft, using 40 degrees flaps, unlatching doors, shutting off electrical power when landing is assured, landing slightly tail-low, holding the nose off as long as possible, and evacuating after stop.",
+    "understanding": "The procedure shifts load and technique to protect the nose gear area and occupants during touchdown and rollout.",
+    "application": "Used when nose gear or nose tire condition is defective but landing will be attempted.",
+    "command": "Configure for a tail-low landing and keep weight off the nose as long as possible after touchdown.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Landing Gear Malfunction Procedures",
+        "sourcePage": "3-9",
+        "pdfPages": [37],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "PROC-GEAR-FLAT-MAIN-TIRE",
+    "title": "Landing With A Flat Main Tire",
+    "category": "PROCEDURE",
+    "knowledge": "For a flat main tire, the POH calls for a normal full-flap approach, touchdown on the good tire first, holding the airplane off the flat tire as long as possible with aileron control, and maintaining directional control with brake on the good wheel as required.",
+    "understanding": "The technique delays loading the failed tire and preserves directional control during rollout.",
+    "application": "Used when a main tire is known or suspected flat before landing.",
+    "command": "Touch down on the good tire first and preserve directional control as the flat tire side settles.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "HIGH",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Landing Gear Malfunction Procedures",
+        "sourcePage": "3-10",
+        "pdfPages": [38],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "PROC-ELECTRICAL-OVER-VOLTAGE",
+    "title": "Over-Voltage Light Illuminates",
+    "category": "PROCEDURE",
+    "knowledge": "If the over-voltage light illuminates, the POH checklist calls for avionics power OFF, both sides of the master switch OFF, master switch ON, confirm over-voltage light OFF, then avionics power ON; if the light illuminates again, terminate the flight as soon as practical.",
+    "understanding": "The over-voltage sensor automatically shuts down the alternator at approximately 31.5 volts; a reset distinguishes a momentary event from a confirmed malfunction.",
+    "application": "Used when the over-voltage warning light illuminates in flight.",
+    "command": "Attempt the POH reset sequence once; if the warning returns, treat it as a confirmed electrical malfunction and terminate the flight.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Electrical Power Supply System Malfunctions",
+        "sourcePage": "3-10",
+        "pdfPages": [38],
+        "verification": "EXTRACTED"
+      },
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Amplified Electrical Power Supply System Malfunctions",
+        "sourcePage": "3-19",
+        "pdfPages": [47],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "PROC-ELECTRICAL-AMMETER-DISCHARGE",
+    "title": "Ammeter Shows Discharge",
+    "category": "PROCEDURE",
+    "knowledge": "If the ammeter indicates a continuous discharge rate in flight, the POH directs alternator OFF, nonessential radio and electrical equipment OFF, and terminating the flight as soon as practical.",
+    "understanding": "A continuous discharge indicates the alternator is not supplying power and its field circuit may be placing unnecessary load on the system.",
+    "application": "Used when the ammeter shows a continuous discharge rate in flight.",
+    "command": "Remove the alternator field load, shed nonessential electrical load, and terminate the flight as soon as practical.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Electrical Power Supply System Malfunctions",
+        "sourcePage": "3-10",
+        "pdfPages": [38],
+        "verification": "EXTRACTED"
+      },
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Amplified Electrical Power Supply System Malfunctions",
+        "sourcePage": "3-19",
+        "pdfPages": [47],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "PROC-ELECTRICAL-BATTERY-CONSERVATION",
+    "title": "Electrical Power Conservation After Malfunction",
+    "category": "PROCEDURE",
+    "knowledge": "After a confirmed electrical malfunction, the POH notes the battery can supply the electrical system only for a limited time, and at night power must be conserved for later operation of landing gear, wing flaps, and possible landing lights.",
+    "understanding": "Electrical load management preserves remaining battery energy for configuration and landing needs.",
+    "application": "Used after over-voltage recurrence or insufficient charging requires battery-only operation.",
+    "command": "Prioritize essential electrical loads and preserve battery capacity for landing configuration and landing lights if needed.",
+    "memoryRequired": true,
+    "referenceRequired": true,
+    "criticality": "HIGH",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 3 - Amplified Electrical Power Supply System Malfunctions",
+        "sourcePage": "3-19",
+        "pdfPages": [47],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "LIM-FUEL-SELECTOR-TAKEOFF-LANDING",
+    "title": "Fuel Selector Position for Takeoff and Landing",
+    "category": "PROCEDURE",
+    "knowledge": "The POH note states to take off and land with the fuel selector valve handle in the BOTH position.",
+    "understanding": "The BOTH position is specified for takeoff and landing in the fuel limitations section.",
+    "application": "Used during before-takeoff and before-landing configuration checks.",
+    "command": "Confirm fuel selector BOTH before takeoff and before landing.",
+    "memoryRequired": true,
+    "referenceRequired": false,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "EVERY_FLIGHT",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Fuel Limitations",
+        "sourcePage": "2-8",
+        "pdfPages": [24],
+        "verification": "EXTRACTED"
+      }
+    ]
+  },
+  {
+    "code": "LIM-OPS-KNOWN-ICING",
+    "title": "Known Icing Prohibition",
+    "category": "LIMITATION",
+    "knowledge": "Flight into known icing conditions is prohibited.",
+    "understanding": "The POH lists this as an operating limitation.",
+    "application": "Used in preflight go/no-go decisions and in-flight weather avoidance decisions.",
+    "command": "Avoid dispatching into, or continuing into, known icing conditions.",
+    "memoryRequired": true,
+    "referenceRequired": false,
+    "criticality": "CRITICAL",
+    "operationalFrequency": "AS_REQUIRED",
+    "verificationStatus": "EXTRACTED",
+    "sourceReferences": [
+      {
+        "sourceType": "POH",
+        "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+        "sourceSection": "Section 2 - Kinds of Operation Limits",
+        "sourcePage": "2-7",
+        "pdfPages": [23],
+        "verification": "EXTRACTED"
+      }
+    ]
+  }
+]

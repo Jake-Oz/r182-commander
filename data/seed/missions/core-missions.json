@@ -1,0 +1,261 @@
+[
+  {
+    "code": "M01",
+    "title": "Meet Your Aircraft",
+    "purpose": "Introduce the aircraft, its configuration, and pilot responsibilities.",
+    "status": "AVAILABLE",
+    "sequence": 1,
+    "competencyCodes": ["C-AIRCRAFT-SYSTEMS"],
+    "knowledgeItemCodes": ["CFG-FUEL-AIRCRAFT-USABLE", "LIM-WEIGHT-MAXIMUMS"],
+    "lessons": [
+      {
+        "code": "M01-L01",
+        "title": "Aircraft Overview",
+        "sequence": 1,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": ["LIM-WEIGHT-MAXIMUMS"]
+      },
+      {
+        "code": "M01-L03",
+        "title": "Aircraft Configuration",
+        "sequence": 3,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": ["CFG-FUEL-AIRCRAFT-USABLE"]
+      }
+    ],
+    "graduationCriteria": {
+      "minimumCompetency": "EXPLAIN",
+      "minimumCommanderScore": 70
+    }
+  },
+  {
+    "code": "M02",
+    "title": "Aircraft Limitations",
+    "purpose": "Understand and apply the operational boundaries of the aircraft.",
+    "status": "ACTIVE",
+    "sequence": 2,
+    "competencyCodes": ["C-CONFIGURATION-MANAGEMENT", "C-DECISION-MAKING"],
+    "knowledgeItemCodes": [
+      "LIM-AIRSPEED-VNE",
+      "LIM-AIRSPEED-VNO",
+      "LIM-AIRSPEED-VA",
+      "LIM-AIRSPEED-VFE",
+      "LIM-AIRSPEED-VLO",
+      "LIM-AIRSPEED-VLE",
+      "LIM-WEIGHT-MAXIMUMS",
+      "LIM-POWERPLANT-ENGINE",
+      "LIM-OPS-KNOWN-ICING"
+    ],
+    "lessons": [
+      {
+        "code": "M02-L01",
+        "title": "Airspeed Limitations",
+        "sequence": 1,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": [
+          "LIM-AIRSPEED-VNE",
+          "LIM-AIRSPEED-VNO",
+          "LIM-AIRSPEED-VA",
+          "LIM-AIRSPEED-VFE",
+          "LIM-AIRSPEED-VLO",
+          "LIM-AIRSPEED-VLE"
+        ]
+      },
+      {
+        "code": "M02-L02",
+        "title": "Weight Limitations",
+        "sequence": 2,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": ["LIM-WEIGHT-MAXIMUMS"]
+      },
+      {
+        "code": "M02-L04",
+        "title": "Engine Limitations",
+        "sequence": 4,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": ["LIM-POWERPLANT-ENGINE"]
+      }
+    ],
+    "scenarioCodes": ["SCN-LIMITS-HIGH-ENERGY-ARRIVAL"],
+    "graduationCriteria": {
+      "minimumCompetency": "APPLY",
+      "minimumCommanderScore": 75
+    }
+  },
+  {
+    "code": "M04",
+    "title": "Fuel Commander",
+    "purpose": "Develop effective fuel management using aircraft-specific usable fuel and POH procedures.",
+    "status": "AVAILABLE",
+    "sequence": 4,
+    "competencyCodes": ["C-FUEL-MANAGEMENT", "C-DECISION-MAKING"],
+    "knowledgeItemCodes": [
+      "CFG-FUEL-AIRCRAFT-USABLE",
+      "LIM-FUEL-STANDARD-TANKS",
+      "LIM-FUEL-LONG-RANGE-TANKS",
+      "LIM-FUEL-SELECTOR-TAKEOFF-LANDING"
+    ],
+    "lessons": [
+      {
+        "code": "M04-L02",
+        "title": "Fuel Planning",
+        "sequence": 2,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": ["CFG-FUEL-AIRCRAFT-USABLE"]
+      },
+      {
+        "code": "M04-L03",
+        "title": "Fuel Monitoring",
+        "sequence": 3,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": ["LIM-FUEL-SELECTOR-TAKEOFF-LANDING"]
+      }
+    ],
+    "scenarioCodes": ["SCN-FUEL-UNIT-DISCIPLINE"],
+    "graduationCriteria": {
+      "minimumCompetency": "APPLY",
+      "minimumCommanderScore": 75
+    }
+  },
+  {
+    "code": "M05",
+    "title": "Landing Gear Commander",
+    "purpose": "Master retractable landing gear limits and source-backed manual extension actions.",
+    "status": "ACTIVE",
+    "sequence": 5,
+    "competencyCodes": [
+      "C-CONFIGURATION-MANAGEMENT",
+      "C-EMERGENCY-MANAGEMENT",
+      "C-AIRCRAFT-COMMAND"
+    ],
+    "knowledgeItemCodes": [
+      "LIM-AIRSPEED-VLO",
+      "LIM-AIRSPEED-VLE",
+      "PROC-GEAR-MALFUNCTION-GENERAL-CHECKS",
+      "PROC-GEAR-FAILS-TO-RETRACT",
+      "PROC-GEAR-FAILS-TO-EXTEND",
+      "PROC-GEAR-EXTENSION-RETRY-100-KIAS",
+      "PROC-GEAR-MOTOR-ONE-MINUTE",
+      "PROC-GEAR-MANUAL-EXTENSION-PLACARD",
+      "PROC-GEAR-UP-LANDING",
+      "PROC-GEAR-NO-POSITIVE-LOCK",
+      "PROC-GEAR-DEFECTIVE-NOSE-GEAR",
+      "PROC-GEAR-FLAT-MAIN-TIRE"
+    ],
+    "lessons": [
+      {
+        "code": "M05-L04",
+        "title": "Gear Speeds",
+        "sequence": 4,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": ["LIM-AIRSPEED-VLO", "LIM-AIRSPEED-VLE"]
+      },
+      {
+        "code": "M05-L06",
+        "title": "Abnormal Indications",
+        "sequence": 6,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": [
+          "PROC-GEAR-MALFUNCTION-GENERAL-CHECKS",
+          "PROC-GEAR-FAILS-TO-RETRACT",
+          "PROC-GEAR-MOTOR-ONE-MINUTE"
+        ]
+      },
+      {
+        "code": "M05-L07",
+        "title": "Emergency Extension",
+        "sequence": 7,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": [
+          "PROC-GEAR-MALFUNCTION-GENERAL-CHECKS",
+          "PROC-GEAR-EXTENSION-RETRY-100-KIAS",
+          "PROC-GEAR-FAILS-TO-EXTEND",
+          "PROC-GEAR-MANUAL-EXTENSION-PLACARD"
+        ]
+      },
+      {
+        "code": "M05-L08",
+        "title": "Gear-Up Landing Decision Making",
+        "sequence": 8,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": [
+          "PROC-GEAR-UP-LANDING",
+          "PROC-GEAR-NO-POSITIVE-LOCK",
+          "PROC-GEAR-DEFECTIVE-NOSE-GEAR",
+          "PROC-GEAR-FLAT-MAIN-TIRE"
+        ]
+      }
+    ],
+    "scenarioCodes": [
+      "SCN-GEAR-SPEED-DISCIPLINE",
+      "SCN-GEAR-MANUAL-EXTENSION",
+      "SCN-GEAR-FAILED-RETRACTION",
+      "SCN-GEAR-FAILED-EXTENSION",
+      "SCN-GEAR-NO-POSITIVE-LOCK",
+      "SCN-GEAR-UP-LANDING-DECISION"
+    ],
+    "graduationCriteria": {
+      "minimumCompetency": "COMMAND",
+      "minimumCommanderScore": 80
+    }
+  },
+  {
+    "code": "M06",
+    "title": "Electrical Commander",
+    "purpose": "Understand electrical power supply malfunctions and preserve power for essential landing needs.",
+    "status": "AVAILABLE",
+    "sequence": 6,
+    "competencyCodes": [
+      "C-ELECTRICAL-MANAGEMENT",
+      "C-EMERGENCY-MANAGEMENT",
+      "C-DECISION-MAKING"
+    ],
+    "knowledgeItemCodes": [
+      "PROC-ELECTRICAL-OVER-VOLTAGE",
+      "PROC-ELECTRICAL-AMMETER-DISCHARGE",
+      "PROC-ELECTRICAL-BATTERY-CONSERVATION"
+    ],
+    "lessons": [
+      {
+        "code": "M06-L01",
+        "title": "Electrical Warning Response",
+        "sequence": 1,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": [
+          "PROC-ELECTRICAL-OVER-VOLTAGE",
+          "PROC-ELECTRICAL-AMMETER-DISCHARGE"
+        ]
+      },
+      {
+        "code": "M06-L02",
+        "title": "Battery Conservation",
+        "sequence": 2,
+        "targetMinutesMin": 5,
+        "targetMinutesMax": 15,
+        "knowledgeItemCodes": [
+          "PROC-ELECTRICAL-BATTERY-CONSERVATION"
+        ]
+      }
+    ],
+    "scenarioCodes": [
+      "SCN-ELECTRICAL-OVERVOLTAGE-RECURRENCE",
+      "SCN-ELECTRICAL-DISCHARGE-IN-FLIGHT"
+    ],
+    "graduationCriteria": {
+      "minimumCompetency": "APPLY",
+      "minimumCommanderScore": 75
+    }
+  }
+]

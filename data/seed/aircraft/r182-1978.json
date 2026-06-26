@@ -1,0 +1,109 @@
+{
+  "code": "R182-1978",
+  "manufacturer": "Cessna",
+  "model": "R182",
+  "variant": "Skylane RG",
+  "year": 1978,
+  "verificationStatus": "EXTRACTED",
+  "configuration": {
+    "engine": {
+      "manufacturer": "Avco Lycoming",
+      "model": "O-540-J3C5D",
+      "type": "Normally aspirated, direct-drive, air-cooled, horizontally-opposed, carburetor-equipped six-cylinder engine",
+      "displacementCubicInches": 541.5,
+      "ratedHorsepower": 235,
+      "ratedRpm": 2400
+    },
+    "propeller": {
+      "manufacturer": "McCauley Accessory Division",
+      "model": "B2D34C214/90DHB-8",
+      "blades": 2,
+      "type": "Constant speed and hydraulically actuated",
+      "diameterInches": {
+        "maximum": 82,
+        "minimum": 80.5
+      },
+      "bladeAngleDegreesAt30InchStation": {
+        "low": 15.8,
+        "high": 29.4
+      }
+    },
+    "fuel": {
+      "operationalDisplayUnit": "litres",
+      "weightAndBalanceUnit": "US gallons",
+      "approvedGrades": [
+        "100LL Grade Aviation Fuel (Blue)",
+        "100 (formerly 100/130) Grade Aviation Fuel (Green)"
+      ],
+      "aircraftSpecificUsableFuel": {
+        "usableGallons": 88,
+        "usableLitres": 333,
+        "notes": "Aircraft-specific usable fuel. Use litres for operational planning and display; retain US gallons for weight and balance."
+      },
+      "pohBaseline": {
+        "notes": "POH baseline values are retained for source traceability. Aircraft-specific usable fuel overrides operational fuel planning."
+      },
+      "standardTanks": {
+        "totalGallons": 61,
+        "usableGallons": 56,
+        "unusableGallons": 5,
+        "eachTankGallons": 30.5
+      },
+      "longRangeTanks": {
+        "totalGallons": 80,
+        "usableGallons": 75,
+        "unusableGallons": 5,
+        "eachTankGallons": 40
+      }
+    },
+    "oil": {
+      "sumpQuarts": 8,
+      "totalQuarts": 9
+    },
+    "weights": {
+      "maximumTakeoffPounds": 3100,
+      "maximumLandingPounds": 3100,
+      "standardEmptyWeightPounds": {
+        "skylaneRg": 1734,
+        "skylaneRgII": 1794
+      },
+      "maximumUsefulLoadPounds": {
+        "skylaneRg": 1378,
+        "skylaneRgII": 1318
+      },
+      "maximumBaggageCombinedPounds": 200
+    },
+    "specificLoadings": {
+      "wingLoadingPoundsPerSquareFoot": 17.8,
+      "powerLoadingPoundsPerHorsepower": 13.2
+    }
+  },
+  "sourceReferences": [
+    {
+      "sourceType": "POH",
+      "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+      "sourceSection": "Section 1 - General",
+      "sourcePage": "1-3 to 1-5",
+      "pdfPages": [9, 10, 11],
+      "verification": "EXTRACTED",
+      "notes": "Extracted from OCR and visually checked against rendered PDF pages."
+    },
+    {
+      "sourceType": "POH",
+      "sourceTitle": "Cessna 1978 Model R182 Pilot's Operating Handbook",
+      "sourceSection": "Section 2 - Limitations",
+      "sourcePage": "2-5 to 2-8",
+      "pdfPages": [21, 22, 24],
+      "verification": "EXTRACTED",
+      "notes": "Limit values are duplicated where Section 2 provides approved operating limits."
+    },
+    {
+      "sourceType": "Aircraft Configuration",
+      "sourceTitle": "Operator-provided aircraft configuration",
+      "sourceSection": "Fuel capacity",
+      "sourcePage": "N/A",
+      "verification": "VERIFIED",
+      "notes": "Pilot confirmed this aircraft has 88 U.S. gallons usable fuel, normally measured in litres except for weight and balance."
+    }
+  ]
+}
